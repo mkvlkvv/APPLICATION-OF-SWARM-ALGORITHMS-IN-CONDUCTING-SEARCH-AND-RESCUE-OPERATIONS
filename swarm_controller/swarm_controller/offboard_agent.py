@@ -1,0 +1,220 @@
+#!/usr/bin/env python3
+"""
+Offboard-агент для одного PX4 SITL в namespace px4_<id>.
+Публикует heartbeat OffboardControlMode @ 10 Гц и TrajectorySetpoint с текущей целью.
+Предоставляет сервисы: arm, takeoff, goto, land.
+"""
+
+import math
+import rclpy
+from rclpy.node import Node
+from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy, QoSDurabilityPolicy
+
+from px4_msgs.msg import (
+    OffboardControlMode,
+    TrajectorySetpoint,
+    VehicleCommand,
+    VehicleLocalPosition,
+    VehicleStatus,
+)
+from std_srvs.srv import Trigger
+from geometry_msgs.msg import Point
+
+class OffboardAgent(Node):
+    def __init__(self):
+        super().__init__('offboard_agent')
+
+        # --- Параметры ---
+        self.declare_parameter('drone_id', 1)
+        self.declare_parameter('takeoff_altitude', 3.0)  # м, положительная = вверх (в ENU)
+        self.drone_id = self.get_parameter('drone_id').value
+        self.takeoff_alt = float(self.get_parameter('takeoff_altitude').value)
+
+        ns = f'/px4_{self.drone_id}'
+        self.ns = ns
+
+        # --- QoS для PX4 (BEST_EFFORT + KEEP_LAST 1 + VOLATILE) ---
+        qos_pub = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=1,
+        )
+        qos_sub = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=5,
+        )
+
+        # --- Паблишеры в PX4 ---
+        self.pub_ocm = self.create_publisher(
+            OffboardControlMode, f'{ns}/fmu/in/offboard_control_mode', qos_pub)
+        self.pub_sp = self.create_publisher(
+            TrajectorySetpoint, f'{ns}/fmu/in/trajectory_setpoint', qos_pub)
+        self.pub_cmd = self.create_publisher(
+            VehicleCommand, f'{ns}/fmu/in/vehicle_command', qos_pub)
+
+        # --- Подписки на телеметрию ---
+        self.create_subscription(
+            VehicleLocalPosition, f'{ns}/fmu/out/vehicle_local_position',
+            self._on_local_pos, qos_sub)
+        self.create_subscription(
+            VehicleStatus, f'{ns}/fmu/out/vehicle_status',
+            self._on_status, qos_sub)
+
+        # --- Сервисы управления ---
+        self.create_service(Trigger, f'{ns}/arm', self._srv_arm)
+        self.create_service(Trigger, f'{ns}/takeoff', self._srv_takeoff)
+        self.create_service(Trigger, f'{ns}/land', self._srv_land)
+        # Для goto используем подписчик на Point — проще, чем кастомный сервис на старте
+        self.create_subscription(
+            Point, f'{ns}/goto', self._on_goto, 10)
+
+        # --- Состояние ---
+        self.local_pos = None          # текущая позиция (NED)
+        self.status = None             # VehicleStatus
+        self.setpoint_xyz = None       # (x, y, z) в NED — текущая цель
+        self.setpoint_yaw = 0.0
+        self.offboard_counter = 0      # для первичного потока heartbeat
+
+        # --- Таймер 10 Гц: heartbeat + setpoint ---
+        self.create_timer(0.1, self._tick)
+
+        self.get_logger().info(
+            f'OffboardAgent started for drone {self.drone_id} (ns={ns})')
+
+    # ----------------- Колбэки подписок -----------------
+    def _on_local_pos(self, msg: VehicleLocalPosition):
+        self.local_pos = msg
+
+    def _on_status(self, msg: VehicleStatus):
+        self.status = msg
+
+    def _on_goto(self, msg: Point):
+        """Принять новую цель (в NED: x — север, y — восток, z — вниз)."""
+        # Пользователю удобнее ENU: z вверх положительная → конвертим
+        x_ned = msg.x
+        y_ned = msg.y
+        z_ned = -abs(msg.z)  # высота всегда отрицательная в NED
+        self.setpoint_xyz = (x_ned, y_ned, z_ned)
+        self.get_logger().info(
+            f'[drone {self.drone_id}] goto ({x_ned:.1f}, {y_ned:.1f}, {-z_ned:.1f})')
+
+    # ----------------- Сервисы -----------------
+    def _srv_arm(self, request, response):
+        import time as _t
+        if self.offboard_counter < 10:
+            response.success = False
+            response.message = f'Setpoint stream not ready ({self.offboard_counter}/10)'
+            self.get_logger().warn(response.message)
+            return response
+        if self.local_pos is not None and self.setpoint_xyz is None:
+            self.setpoint_xyz = (self.local_pos.x, self.local_pos.y, self.local_pos.z)
+        self._switch_to_offboard()
+        _t.sleep(0.2)
+        self._send_vehicle_command(
+            VehicleCommand.VEHICLE_CMD_COMPONENT_ARM_DISARM, param1=1.0)
+        response.success = True
+        response.message = f'Arm command sent to drone {self.drone_id}'
+        self.get_logger().info(response.message)
+        return response
+
+    def _srv_takeoff(self, request, response):
+        if self.local_pos is None:
+            response.success = False
+            response.message = 'No local position yet'
+            return response
+        x = self.local_pos.x
+        y = self.local_pos.y
+        z = -abs(self.takeoff_alt)
+        self.setpoint_xyz = (x, y, z)
+        self._switch_to_offboard()
+        self._send_vehicle_command(
+            VehicleCommand.VEHICLE_CMD_COMPONENT_ARM_DISARM, param1=1.0)
+        response.success = True
+        response.message = f'Takeoff to {self.takeoff_alt} m initiated'
+        self.get_logger().info(response.message)
+        return response
+
+    def _srv_land(self, request, response):
+        self._send_vehicle_command(VehicleCommand.VEHICLE_CMD_NAV_LAND)
+        response.success = True
+        response.message = 'Land command sent'
+        self.get_logger().info(response.message)
+        return response
+
+    # ----------------- Основной цикл -----------------
+    def _tick(self):
+        # Heartbeat: шлём всегда, иначе PX4 не пустит в offboard
+        ocm = OffboardControlMode()
+        ocm.position = True
+        ocm.velocity = False
+        ocm.acceleration = False
+        ocm.attitude = False
+        ocm.body_rate = False
+        ocm.timestamp = self._timestamp_us()
+        self.pub_ocm.publish(ocm)
+
+        # Setpoint: либо текущая цель, либо hover на месте
+        sp = TrajectorySetpoint()
+        sp.timestamp = self._timestamp_us()
+        if self.setpoint_xyz is not None:
+            sp.position = [float(self.setpoint_xyz[0]),
+                           float(self.setpoint_xyz[1]),
+                           float(self.setpoint_xyz[2])]
+            sp.yaw = float(self.setpoint_yaw)
+        else:
+            # До первого takeoff — держим на текущей позиции на нулевой высоте
+            if self.local_pos is not None:
+                sp.position = [self.local_pos.x, self.local_pos.y, 0.0]
+            else:
+                sp.position = [0.0, 0.0, 0.0]
+            sp.yaw = 0.0
+        self.pub_sp.publish(sp)
+
+        self.offboard_counter += 1
+
+    # ----------------- Утилиты -----------------
+    def _switch_to_offboard(self):
+        # VEHICLE_CMD_DO_SET_MODE: base_mode=1 (custom), main_mode=6 (offboard)
+        self._send_vehicle_command(
+            VehicleCommand.VEHICLE_CMD_DO_SET_MODE,
+            param1=1.0, param2=6.0)
+
+    def _send_vehicle_command(self, command, param1=0.0, param2=0.0,
+                              param3=0.0, param4=0.0, param5=0.0,
+                              param6=0.0, param7=0.0):
+        msg = VehicleCommand()
+        msg.command = command
+        msg.param1 = float(param1)
+        msg.param2 = float(param2)
+        msg.param3 = float(param3)
+        msg.param4 = float(param4)
+        msg.param5 = float(param5)
+        msg.param6 = float(param6)
+        msg.param7 = float(param7)
+        msg.target_system = self.drone_id  # PX4 MAV_SYS_ID = i+1
+        msg.target_component = 1
+        msg.source_system = 255
+        msg.source_component = 1
+        msg.from_external = True
+        msg.timestamp = self._timestamp_us()
+        self.pub_cmd.publish(msg)
+
+    def _timestamp_us(self) -> int:
+        return int(self.get_clock().now().nanoseconds / 1000)
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = OffboardAgent()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()

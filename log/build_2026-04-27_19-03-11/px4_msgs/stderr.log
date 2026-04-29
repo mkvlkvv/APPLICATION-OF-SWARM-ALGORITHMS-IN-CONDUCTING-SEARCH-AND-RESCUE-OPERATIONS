@@ -1,0 +1,97 @@
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c", line 38, in <module>
+  File "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp", line 38, in <module>
+  File "/opt/ros/humble/share/rosidl_generator_rs/cmake/../../../lib/rosidl_generator_rs/rosidl_generator_rs", line 43, in <module>
+gmake[2]: *** Deleting file 'rosidl_generator_cpp/px4_msgs/msg/action_request.hpp'
+gmake[2]: *** Deleting file 'rosidl_generator_c/px4_msgs/msg/action_request.h'
+    sys.exit(main())
+    sys.exit(main())
+    sys.exit(main())
+  File "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp", line 34, in main
+  File "/opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c", line 34, in main
+  File "/opt/ros/humble/share/rosidl_generator_rs/cmake/../../../lib/rosidl_generator_rs/rosidl_generator_rs", line 36, in main
+    return generate_rs(
+    generate_c(args.generator_arguments_file)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_rs/__init__.py", line 95, in generate_rs
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_c/__init__.py", line 37, in generate_c
+    generate_cpp(args.generator_arguments_file)
+    idl_file = parse_idl_file(locator)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py", line 39, in generate_cpp
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 64, in parse_idl_file
+    return generate_files(
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 74, in generate_files
+    content = parse_idl_string(string, png_file=png_file)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 72, in parse_idl_string
+    return generate_files(
+    idl_file = parse_idl_file(locator)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 74, in generate_files
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 64, in parse_idl_file
+    tree = get_ast_from_idl_string(idl_string)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 89, in get_ast_from_idl_string
+    content = parse_idl_string(string, png_file=png_file)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 72, in parse_idl_string
+    idl_file = parse_idl_file(locator)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 64, in parse_idl_file
+    return _parser.parse(idl_string)
+  File "/usr/lib/python3/dist-packages/lark/lark.py", line 619, in parse
+    tree = get_ast_from_idl_string(idl_string)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 89, in get_ast_from_idl_string
+    content = parse_idl_string(string, png_file=png_file)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 72, in parse_idl_string
+    return _parser.parse(idl_string)
+  File "/usr/lib/python3/dist-packages/lark/lark.py", line 619, in parse
+    tree = get_ast_from_idl_string(idl_string)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 89, in get_ast_from_idl_string
+    return _parser.parse(idl_string)
+  File "/usr/lib/python3/dist-packages/lark/lark.py", line 619, in parse
+    return self.parser.parse(text, start=start, on_error=on_error)
+    return self.parser.parse(text, start=start, on_error=on_error)
+  File "/usr/lib/python3/dist-packages/lark/parser_frontends.py", line 99, in parse
+  File "/usr/lib/python3/dist-packages/lark/parser_frontends.py", line 99, in parse
+    return self.parser.parse(text, start=start, on_error=on_error)
+  File "/usr/lib/python3/dist-packages/lark/parser_frontends.py", line 99, in parse
+    return self.parser.parse(stream, chosen_start, **kw)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 292, in parse
+    return self.parser.parse(stream, chosen_start, **kw)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 266, in parse
+    return self.parser.parse(stream, chosen_start, **kw)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 266, in parse
+    return transformer.transform(solutions[0])
+    to_scan = self._parse(lexer, columns, to_scan, start_symbol)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 395, in transform
+  File "/usr/lib/python3/dist-packages/lark/parsers/xearley.py", line 144, in _parse
+    to_scan = self._parse(lexer, columns, to_scan, start_symbol)
+  File "/usr/lib/python3/dist-packages/lark/parsers/xearley.py", line 144, in _parse
+    self.predict_and_complete(i, to_scan, columns, transitives)
+    self.predict_and_complete(i, to_scan, columns, transitives)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 152, in predict_and_complete
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 140, in predict_and_complete
+    new_item = Item(rule, 0, i)
+    if new_item.expect in self.TERMINALS:
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley_common.py", line 22, in __init__
+  File "/usr/lib/python3/dist-packages/lark/grammar.py", line 25, in __hash__
+    self.visit(root)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 532, in visit
+    def __hash__(self):
+KeyboardInterrupt
+    super(ForestToParseTree, self).visit(root)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 355, in visit
+    self.previous = rule.expansion[ptr - 1] if ptr > 0 and len(rule.expansion) else None
+KeyboardInterrupt
+    next_node = vsni(current)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 620, in visit_symbol_node_in
+    super(ForestToParseTree, self).visit_symbol_node_in(node)
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 419, in visit_symbol_node_in
+    return node.children
+  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 89, in children
+    return sorted(self._children, key=attrgetter('sort_key'))
+KeyboardInterrupt
+gmake[2]: *** [CMakeFiles/px4_msgs__rosidl_generator_c.dir/build.make:272: rosidl_generator_c/px4_msgs/msg/action_request.h] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:231: CMakeFiles/px4_msgs__rosidl_generator_c.dir/all] Interrupt
+gmake[2]: *** [px4_msgs__rs/CMakeFiles/px4_msgs__rs.dir/build.make:458: rosidl_generator_rs/px4_msgs/rust/src/lib.rs] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:635: px4_msgs__rs/CMakeFiles/px4_msgs__rs.dir/all] Interrupt
+gmake[2]: *** [CMakeFiles/px4_msgs__cpp.dir/build.make:1193: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:284: CMakeFiles/px4_msgs__cpp.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

@@ -1,0 +1,6 @@
+uint8 agent_id
+float32 x                  # мировая NED позиция, м
+float32 y
+float32 amount             # сколько положить [0..1]
+---
+bool success

@@ -1,0 +1,9 @@
+[0.000000] (-) TimerEvent: {}
+[0.000825] (-) JobUnselected: {'identifier': 'px4_msgs'}
+[0.000904] (-) JobUnselected: {'identifier': 'swarm_agent'}
+[0.000969] (-) JobUnselected: {'identifier': 'swarm_bringup'}
+[0.001002] (-) JobUnselected: {'identifier': 'swarm_interfaces'}
+[0.001039] (swarm_controller) JobQueued: {'identifier': 'swarm_controller', 'dependencies': OrderedDict([('px4_msgs', '/home/mkvlkv/swarm_ws_v1/src/install/px4_msgs')])}
+[0.001094] (swarm_controller) JobStarted: {'identifier': 'swarm_controller'}
+[0.022034] (swarm_controller) JobEnded: {'identifier': 'swarm_controller', 'rc': 1}
+[0.032683] (-) EventReactorShutdown: {}

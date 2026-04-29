@@ -1,0 +1,364 @@
+[0.000000] (-) TimerEvent: {}
+[0.000442] (-) JobUnselected: {'identifier': 'swarm_agent'}
+[0.000523] (-) JobUnselected: {'identifier': 'swarm_bringup'}
+[0.000574] (-) JobUnselected: {'identifier': 'swarm_controller'}
+[0.000615] (-) JobUnselected: {'identifier': 'swarm_interfaces'}
+[0.000655] (px4_msgs) JobQueued: {'identifier': 'px4_msgs', 'dependencies': OrderedDict()}
+[0.000696] (px4_msgs) JobStarted: {'identifier': 'px4_msgs'}
+[0.016204] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'cmake'}
+[0.019914] (px4_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/mkvlkv/swarm_ws_v1/src/px4_msgs', '-DCMAKE_INSTALL_PREFIX=/home/mkvlkv/swarm_ws_v1/src/install/px4_msgs'], 'cwd': '/home/mkvlkv/swarm_ws_v1/src/build/px4_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'mkvlkv'), ('ROS_PACKAGE_PATH', '/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/share'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/mkvlkv/swarm_ws_v1/install/swarm_interfaces/lib:/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/mkvlkv'), ('OLDPWD', '/home/mkvlkv/swarm_ws_v1'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/mkvlkv/swarm_ws_v1/install:/home/mkvlkv/swarm_ws/install:/home/mkvlkv/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'mkvlkv'), ('NAME', 'LAPTOP-93EHL3JC'), ('WSL_INTEROP', '/run/WSL/328_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/lib/x86_64-linux-gnu/pkgconfig:/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/lib/pkgconfig'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/mkvlkv/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/mekov/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/mekov/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/mkvlkv/swarm_ws_v1/install/swarm_bringup:/home/mkvlkv/swarm_ws_v1/install/swarm_interfaces:/home/mkvlkv/ros2_ws/install/swarm_sar:/home/mkvlkv/swarm_ws/install/swarm_search:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/mkvlkv/swarm_ws_v1/src/build/px4_msgs'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/mkvlkv/swarm_ws_v1/install/swarm_interfaces/local/lib/python3.10/dist-packages:/home/mkvlkv/ros2_ws/install/swarm_sar/local/lib/python3.10/dist-packages:/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/local/lib/python3.10/dist-packages:/home/mkvlkv/swarm_ws/build/swarm_search:/home/mkvlkv/swarm_ws/install/swarm_search/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/mkvlkv/swarm_ws_v1/install/swarm_bringup:/home/mkvlkv/swarm_ws_v1/install/swarm_interfaces:/home/mkvlkv/ros2_ws/install/swarm_sar:/home/mkvlkv/swarm_ws/install/swarm_search:/opt/ros/humble:/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces'), ('WSLENV', '')]), 'shell': False}
+[0.099057] (-) TimerEvent: {}
+[0.199338] (-) TimerEvent: {}
+[0.299694] (-) TimerEvent: {}
+[0.347990] (px4_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.399860] (-) TimerEvent: {}
+[0.500112] (-) TimerEvent: {}
+[0.600396] (-) TimerEvent: {}
+[0.700668] (-) TimerEvent: {}
+[0.801029] (-) TimerEvent: {}
+[0.901384] (-) TimerEvent: {}
+[0.909314] (px4_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[1.001586] (-) TimerEvent: {}
+[1.101893] (-) TimerEvent: {}
+[1.202143] (-) TimerEvent: {}
+[1.255810] (px4_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.302382] (-) TimerEvent: {}
+[1.402684] (-) TimerEvent: {}
+[1.468801] (px4_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.476592] (px4_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.477243] (px4_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.477965] (px4_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.483008] (px4_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.502841] (-) TimerEvent: {}
+[1.603120] (-) TimerEvent: {}
+[1.690079] (px4_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.698578] (px4_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.699063] (px4_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.699642] (px4_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.703251] (-) TimerEvent: {}
+[1.718430] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.803380] (-) TimerEvent: {}
+[1.903666] (-) TimerEvent: {}
+[1.952899] (px4_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[2.003896] (-) TimerEvent: {}
+[2.104216] (-) TimerEvent: {}
+[2.127390] (px4_msgs) StdoutLine: {'line': b'-- Found builtin_interfaces: 1.2.2 (/opt/ros/humble/share/builtin_interfaces/cmake)\n'}
+[2.204345] (-) TimerEvent: {}
+[2.304560] (-) TimerEvent: {}
+[2.345976] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[2.358539] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[2.378135] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[2.404736] (-) TimerEvent: {}
+[2.408163] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.440719] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.471602] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[2.504861] (-) TimerEvent: {}
+[2.605115] (-) TimerEvent: {}
+[2.705388] (-) TimerEvent: {}
+[2.805619] (-) TimerEvent: {}
+[2.905886] (-) TimerEvent: {}
+[3.006214] (-) TimerEvent: {}
+[3.106488] (-) TimerEvent: {}
+[3.206780] (-) TimerEvent: {}
+[3.307039] (-) TimerEvent: {}
+[3.407337] (-) TimerEvent: {}
+[3.507656] (-) TimerEvent: {}
+[3.607949] (-) TimerEvent: {}
+[3.708224] (-) TimerEvent: {}
+[3.808557] (-) TimerEvent: {}
+[3.908778] (-) TimerEvent: {}
+[4.009078] (-) TimerEvent: {}
+[4.109371] (-) TimerEvent: {}
+[4.209603] (-) TimerEvent: {}
+[4.309821] (-) TimerEvent: {}
+[4.410062] (-) TimerEvent: {}
+[4.504205] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_cppcheck: 0.12.15 (/opt/ros/humble/share/ament_cmake_cppcheck/cmake)\n'}
+[4.510250] (-) TimerEvent: {}
+[4.512008] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_cpplint: 0.12.15 (/opt/ros/humble/share/ament_cmake_cpplint/cmake)\n'}
+[4.518261] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_uncrustify: 0.12.15 (/opt/ros/humble/share/ament_cmake_uncrustify/cmake)\n'}
+[4.526458] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[4.610411] (-) TimerEvent: {}
+[4.710633] (-) TimerEvent: {}
+[4.810879] (-) TimerEvent: {}
+[4.911174] (-) TimerEvent: {}
+[5.011501] (-) TimerEvent: {}
+[5.106495] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.111671] (-) TimerEvent: {}
+[5.211907] (-) TimerEvent: {}
+[5.312172] (-) TimerEvent: {}
+[5.314375] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.412291] (-) TimerEvent: {}
+[5.456087] (px4_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[5.459799] (px4_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[5.512459] (-) TimerEvent: {}
+[5.612772] (-) TimerEvent: {}
+[5.713215] (-) TimerEvent: {}
+[5.813510] (-) TimerEvent: {}
+[5.858165] (px4_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[5.858383] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[5.858456] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[5.858514] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[5.890423] (px4_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[5.913652] (-) TimerEvent: {}
+[6.013921] (-) TimerEvent: {}
+[6.018627] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_flake8: 0.12.15 (/opt/ros/humble/share/ament_cmake_flake8/cmake)\n'}
+[6.024152] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_pep257: 0.12.15 (/opt/ros/humble/share/ament_cmake_pep257/cmake)\n'}
+[6.114172] (-) TimerEvent: {}
+[6.173156] (px4_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[6.214315] (-) TimerEvent: {}
+[6.314598] (-) TimerEvent: {}
+[6.414843] (-) TimerEvent: {}
+[6.515104] (-) TimerEvent: {}
+[6.615409] (-) TimerEvent: {}
+[6.638930] (px4_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[6.680570] (px4_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/mkvlkv/swarm_ws_v1/src/build/px4_msgs\n'}
+[6.715565] (-) TimerEvent: {}
+[6.719440] (px4_msgs) CommandEnded: {'returncode': 0}
+[6.720182] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'build'}
+[6.721159] (px4_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/mkvlkv/swarm_ws_v1/src/build/px4_msgs', '--', '-j16', '-l16'], 'cwd': '/home/mkvlkv/swarm_ws_v1/src/build/px4_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'mkvlkv'), ('ROS_PACKAGE_PATH', '/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/share'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/mkvlkv/swarm_ws_v1/install/swarm_interfaces/lib:/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/mkvlkv'), ('OLDPWD', '/home/mkvlkv/swarm_ws_v1'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/mkvlkv/swarm_ws_v1/install:/home/mkvlkv/swarm_ws/install:/home/mkvlkv/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'mkvlkv'), ('NAME', 'LAPTOP-93EHL3JC'), ('WSL_INTEROP', '/run/WSL/328_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/lib/x86_64-linux-gnu/pkgconfig:/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/lib/pkgconfig'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/mkvlkv/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/mekov/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/mekov/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/mkvlkv/swarm_ws_v1/install/swarm_bringup:/home/mkvlkv/swarm_ws_v1/install/swarm_interfaces:/home/mkvlkv/ros2_ws/install/swarm_sar:/home/mkvlkv/swarm_ws/install/swarm_search:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/mkvlkv/swarm_ws_v1/src/build/px4_msgs'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/mkvlkv/swarm_ws_v1/install/swarm_interfaces/local/lib/python3.10/dist-packages:/home/mkvlkv/ros2_ws/install/swarm_sar/local/lib/python3.10/dist-packages:/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces/local/lib/python3.10/dist-packages:/home/mkvlkv/swarm_ws/build/swarm_search:/home/mkvlkv/swarm_ws/install/swarm_search/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/mkvlkv/swarm_ws_v1/install/swarm_bringup:/home/mkvlkv/swarm_ws_v1/install/swarm_interfaces:/home/mkvlkv/ros2_ws/install/swarm_sar:/home/mkvlkv/swarm_ws/install/swarm_search:/opt/ros/humble:/home/mkvlkv/ros2_ws/install/swarm_sar_interfaces'), ('WSLENV', '')]), 'shell': False}
+[6.815750] (-) TimerEvent: {}
+[6.916030] (-) TimerEvent: {}
+[7.016268] (-) TimerEvent: {}
+[7.116583] (-) TimerEvent: {}
+[7.216924] (-) TimerEvent: {}
+[7.233477] (px4_msgs) StdoutLine: {'line': b'[  0%] Generating C code for ROS interfaces\n'}
+[7.239602] (px4_msgs) StdoutLine: {'line': b'[  1%] Generating Rust code for ROS interfaces\n'}
+[7.249585] (px4_msgs) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_copy_px4_msgs\n'}
+[7.274103] (px4_msgs) StdoutLine: {'line': b'[  1%] Generating C++ code for ROS interfaces\n'}
+[7.317053] (-) TimerEvent: {}
+[7.417300] (-) TimerEvent: {}
+[7.517728] (-) TimerEvent: {}
+[7.617974] (-) TimerEvent: {}
+[7.718222] (-) TimerEvent: {}
+[7.723640] (px4_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[7.724469] (px4_msgs) StdoutLine: {'line': b'creating px4_msgs.egg-info\n'}
+[7.725391] (px4_msgs) StdoutLine: {'line': b'writing px4_msgs.egg-info/PKG-INFO\n'}
+[7.725707] (px4_msgs) StdoutLine: {'line': b'writing dependency_links to px4_msgs.egg-info/dependency_links.txt\n'}
+[7.725971] (px4_msgs) StdoutLine: {'line': b'writing top-level names to px4_msgs.egg-info/top_level.txt\n'}
+[7.726299] (px4_msgs) StdoutLine: {'line': b"writing manifest file 'px4_msgs.egg-info/SOURCES.txt'\n"}
+[7.731531] (px4_msgs) StdoutLine: {'line': b"reading manifest file 'px4_msgs.egg-info/SOURCES.txt'\n"}
+[7.732365] (px4_msgs) StdoutLine: {'line': b"writing manifest file 'px4_msgs.egg-info/SOURCES.txt'\n"}
+[7.797749] (px4_msgs) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_build_px4_msgs_egg\n'}
+[7.818417] (-) TimerEvent: {}
+[7.918728] (-) TimerEvent: {}
+[8.018962] (-) TimerEvent: {}
+[8.119253] (-) TimerEvent: {}
+[8.219594] (-) TimerEvent: {}
+[8.319827] (-) TimerEvent: {}
+[8.420130] (-) TimerEvent: {}
+[8.520397] (-) TimerEvent: {}
+[8.620632] (-) TimerEvent: {}
+[8.720907] (-) TimerEvent: {}
+[8.821232] (-) TimerEvent: {}
+[8.921480] (-) TimerEvent: {}
+[9.021722] (-) TimerEvent: {}
+[9.121993] (-) TimerEvent: {}
+[9.222279] (-) TimerEvent: {}
+[9.322528] (-) TimerEvent: {}
+[9.422841] (-) TimerEvent: {}
+[9.523201] (-) TimerEvent: {}
+[9.623539] (-) TimerEvent: {}
+[9.723844] (-) TimerEvent: {}
+[9.824121] (-) TimerEvent: {}
+[9.924391] (-) TimerEvent: {}
+[10.024676] (-) TimerEvent: {}
+[10.124986] (-) TimerEvent: {}
+[10.225283] (-) TimerEvent: {}
+[10.325551] (-) TimerEvent: {}
+[10.425832] (-) TimerEvent: {}
+[10.526104] (-) TimerEvent: {}
+[10.626411] (-) TimerEvent: {}
+[10.726705] (-) TimerEvent: {}
+[10.827038] (-) TimerEvent: {}
+[10.927351] (-) TimerEvent: {}
+[11.027650] (-) TimerEvent: {}
+[11.127920] (-) TimerEvent: {}
+[11.228234] (-) TimerEvent: {}
+[11.328510] (-) TimerEvent: {}
+[11.428746] (-) TimerEvent: {}
+[11.529003] (-) TimerEvent: {}
+[11.629282] (-) TimerEvent: {}
+[11.729561] (-) TimerEvent: {}
+[11.829786] (-) TimerEvent: {}
+[11.930088] (-) TimerEvent: {}
+[12.030383] (-) TimerEvent: {}
+[12.130677] (-) TimerEvent: {}
+[12.230985] (-) TimerEvent: {}
+[12.331316] (-) TimerEvent: {}
+[12.431567] (-) TimerEvent: {}
+[12.531948] (-) TimerEvent: {}
+[12.632218] (-) TimerEvent: {}
+[12.732505] (-) TimerEvent: {}
+[12.832723] (-) TimerEvent: {}
+[12.933009] (-) TimerEvent: {}
+[13.033343] (-) TimerEvent: {}
+[13.133626] (-) TimerEvent: {}
+[13.233901] (-) TimerEvent: {}
+[13.334203] (-) TimerEvent: {}
+[13.434458] (-) TimerEvent: {}
+[13.534780] (-) TimerEvent: {}
+[13.635096] (-) TimerEvent: {}
+[13.735356] (-) TimerEvent: {}
+[13.835600] (-) TimerEvent: {}
+[13.935855] (-) TimerEvent: {}
+[14.036122] (-) TimerEvent: {}
+[14.136393] (-) TimerEvent: {}
+[14.236633] (-) TimerEvent: {}
+[14.336892] (-) TimerEvent: {}
+[14.437133] (-) TimerEvent: {}
+[14.537450] (-) TimerEvent: {}
+[14.637699] (-) TimerEvent: {}
+[14.738009] (-) TimerEvent: {}
+[14.838370] (-) TimerEvent: {}
+[14.938631] (-) TimerEvent: {}
+[15.038876] (-) TimerEvent: {}
+[15.139147] (-) TimerEvent: {}
+[15.239449] (-) TimerEvent: {}
+[15.339777] (-) TimerEvent: {}
+[15.440060] (-) TimerEvent: {}
+[15.540342] (-) TimerEvent: {}
+[15.640569] (-) TimerEvent: {}
+[15.740880] (-) TimerEvent: {}
+[15.841176] (-) TimerEvent: {}
+[15.941445] (-) TimerEvent: {}
+[16.041741] (-) TimerEvent: {}
+[16.142089] (-) TimerEvent: {}
+[16.242411] (-) TimerEvent: {}
+[16.342654] (-) TimerEvent: {}
+[16.442965] (-) TimerEvent: {}
+[16.543256] (-) TimerEvent: {}
+[16.643501] (-) TimerEvent: {}
+[16.743832] (-) TimerEvent: {}
+[16.844130] (-) TimerEvent: {}
+[16.944387] (-) TimerEvent: {}
+[17.044659] (-) TimerEvent: {}
+[17.144971] (-) TimerEvent: {}
+[17.245222] (-) TimerEvent: {}
+[17.345450] (-) TimerEvent: {}
+[17.445668] (-) TimerEvent: {}
+[17.546033] (-) TimerEvent: {}
+[17.646354] (-) TimerEvent: {}
+[17.746642] (-) TimerEvent: {}
+[17.846958] (-) TimerEvent: {}
+[17.947187] (-) TimerEvent: {}
+[18.047472] (-) TimerEvent: {}
+[18.147811] (-) TimerEvent: {}
+[18.248056] (-) TimerEvent: {}
+[18.348271] (-) TimerEvent: {}
+[18.448562] (-) TimerEvent: {}
+[18.548921] (-) TimerEvent: {}
+[18.649222] (-) TimerEvent: {}
+[18.749538] (-) TimerEvent: {}
+[18.849849] (-) TimerEvent: {}
+[18.950134] (-) TimerEvent: {}
+[19.050478] (-) TimerEvent: {}
+[19.150730] (-) TimerEvent: {}
+[19.251027] (-) TimerEvent: {}
+[19.351340] (-) TimerEvent: {}
+[19.451646] (-) TimerEvent: {}
+[19.551954] (-) TimerEvent: {}
+[19.652224] (-) TimerEvent: {}
+[19.752504] (-) TimerEvent: {}
+[19.852800] (-) TimerEvent: {}
+[19.937204] (px4_msgs) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[19.937486] (px4_msgs) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[19.937562] (px4_msgs) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[19.937878] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c", line 38, in <module>\n'}
+[19.938073] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp", line 38, in <module>\n'}
+[19.938269] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/share/rosidl_generator_rs/cmake/../../../lib/rosidl_generator_rs/rosidl_generator_rs", line 43, in <module>\n'}
+[19.938417] (px4_msgs) StderrLine: {'line': b"gmake[2]: *** Deleting file 'rosidl_generator_cpp/px4_msgs/msg/action_request.hpp'\n"}
+[19.938846] (px4_msgs) StderrLine: {'line': b"gmake[2]: *** Deleting file 'rosidl_generator_c/px4_msgs/msg/action_request.h'\n"}
+[19.940069] (px4_msgs) StderrLine: {'line': b'    sys.exit(main())\n'}
+[19.940169] (px4_msgs) StderrLine: {'line': b'    sys.exit(main())\n'}
+[19.940234] (px4_msgs) StderrLine: {'line': b'    sys.exit(main())\n'}
+[19.940290] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp", line 34, in main\n'}
+[19.940359] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c", line 34, in main\n'}
+[19.940414] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/share/rosidl_generator_rs/cmake/../../../lib/rosidl_generator_rs/rosidl_generator_rs", line 36, in main\n'}
+[19.940466] (px4_msgs) StderrLine: {'line': b'    return generate_rs(\n'}
+[19.940525] (px4_msgs) StderrLine: {'line': b'    generate_c(args.generator_arguments_file)\n'}
+[19.940573] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_rs/__init__.py", line 95, in generate_rs\n'}
+[19.940624] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_c/__init__.py", line 37, in generate_c\n'}
+[19.940674] (px4_msgs) StderrLine: {'line': b'    generate_cpp(args.generator_arguments_file)\n'}
+[19.940722] (px4_msgs) StderrLine: {'line': b'    idl_file = parse_idl_file(locator)\n'}
+[19.940771] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py", line 39, in generate_cpp\n'}
+[19.940860] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 64, in parse_idl_file\n'}
+[19.940921] (px4_msgs) StderrLine: {'line': b'    return generate_files(\n'}
+[19.940973] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 74, in generate_files\n'}
+[19.941023] (px4_msgs) StderrLine: {'line': b'    content = parse_idl_string(string, png_file=png_file)\n'}
+[19.941072] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 72, in parse_idl_string\n'}
+[19.941120] (px4_msgs) StderrLine: {'line': b'    return generate_files(\n'}
+[19.941186] (px4_msgs) StderrLine: {'line': b'    idl_file = parse_idl_file(locator)\n'}
+[19.941243] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 74, in generate_files\n'}
+[19.941295] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 64, in parse_idl_file\n'}
+[19.941344] (px4_msgs) StderrLine: {'line': b'    tree = get_ast_from_idl_string(idl_string)\n'}
+[19.941392] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 89, in get_ast_from_idl_string\n'}
+[19.941440] (px4_msgs) StderrLine: {'line': b'    content = parse_idl_string(string, png_file=png_file)\n'}
+[19.941491] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 72, in parse_idl_string\n'}
+[19.941542] (px4_msgs) StderrLine: {'line': b'    idl_file = parse_idl_file(locator)\n'}
+[19.941600] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 64, in parse_idl_file\n'}
+[19.941652] (px4_msgs) StderrLine: {'line': b'    return _parser.parse(idl_string)\n'}
+[19.941701] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/lark.py", line 619, in parse\n'}
+[19.941749] (px4_msgs) StderrLine: {'line': b'    tree = get_ast_from_idl_string(idl_string)\n'}
+[19.941795] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 89, in get_ast_from_idl_string\n'}
+[19.941842] (px4_msgs) StderrLine: {'line': b'    content = parse_idl_string(string, png_file=png_file)\n'}
+[19.941890] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 72, in parse_idl_string\n'}
+[19.941939] (px4_msgs) StderrLine: {'line': b'    return _parser.parse(idl_string)\n'}
+[19.941988] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/lark.py", line 619, in parse\n'}
+[19.942036] (px4_msgs) StderrLine: {'line': b'    tree = get_ast_from_idl_string(idl_string)\n'}
+[19.942083] (px4_msgs) StderrLine: {'line': b'  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_parser/parser.py", line 89, in get_ast_from_idl_string\n'}
+[19.942130] (px4_msgs) StderrLine: {'line': b'    return _parser.parse(idl_string)\n'}
+[19.942185] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/lark.py", line 619, in parse\n'}
+[19.942233] (px4_msgs) StderrLine: {'line': b'    return self.parser.parse(text, start=start, on_error=on_error)\n'}
+[19.942279] (px4_msgs) StderrLine: {'line': b'    return self.parser.parse(text, start=start, on_error=on_error)\n'}
+[19.942326] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parser_frontends.py", line 99, in parse\n'}
+[19.942373] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parser_frontends.py", line 99, in parse\n'}
+[19.942419] (px4_msgs) StderrLine: {'line': b'    return self.parser.parse(text, start=start, on_error=on_error)\n'}
+[19.942466] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parser_frontends.py", line 99, in parse\n'}
+[19.942521] (px4_msgs) StderrLine: {'line': b'    return self.parser.parse(stream, chosen_start, **kw)\n'}
+[19.942571] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 292, in parse\n'}
+[19.942619] (px4_msgs) StderrLine: {'line': b'    return self.parser.parse(stream, chosen_start, **kw)\n'}
+[19.942694] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 266, in parse\n'}
+[19.942769] (px4_msgs) StderrLine: {'line': b'    return self.parser.parse(stream, chosen_start, **kw)\n'}
+[19.942855] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 266, in parse\n'}
+[19.942933] (px4_msgs) StderrLine: {'line': b'    return transformer.transform(solutions[0])\n'}
+[19.943002] (px4_msgs) StderrLine: {'line': b'    to_scan = self._parse(lexer, columns, to_scan, start_symbol)\n'}
+[19.943058] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 395, in transform\n'}
+[19.943110] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/xearley.py", line 144, in _parse\n'}
+[19.943163] (px4_msgs) StderrLine: {'line': b'    to_scan = self._parse(lexer, columns, to_scan, start_symbol)\n'}
+[19.943267] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/xearley.py", line 144, in _parse\n'}
+[19.943328] (px4_msgs) StderrLine: {'line': b'    self.predict_and_complete(i, to_scan, columns, transitives)\n'}
+[19.943380] (px4_msgs) StderrLine: {'line': b'    self.predict_and_complete(i, to_scan, columns, transitives)\n'}
+[19.943430] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 152, in predict_and_complete\n'}
+[19.943483] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley.py", line 140, in predict_and_complete\n'}
+[19.943535] (px4_msgs) StderrLine: {'line': b'    new_item = Item(rule, 0, i)\n'}
+[19.943585] (px4_msgs) StderrLine: {'line': b'    if new_item.expect in self.TERMINALS:\n'}
+[19.943633] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley_common.py", line 22, in __init__\n'}
+[19.943682] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/grammar.py", line 25, in __hash__\n'}
+[19.943802] (px4_msgs) StderrLine: {'line': b'    self.visit(root)\n'}
+[19.943987] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 532, in visit\n'}
+[19.944109] (px4_msgs) StderrLine: {'line': b'    def __hash__(self):\n'}
+[19.944604] (px4_msgs) StderrLine: {'line': b'KeyboardInterrupt\n'}
+[19.944727] (px4_msgs) StderrLine: {'line': b'    super(ForestToParseTree, self).visit(root)\n'}
+[19.944818] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 355, in visit\n'}
+[19.944907] (px4_msgs) StderrLine: {'line': b'    self.previous = rule.expansion[ptr - 1] if ptr > 0 and len(rule.expansion) else None\n'}
+[19.944987] (px4_msgs) StderrLine: {'line': b'KeyboardInterrupt\n'}
+[19.945078] (px4_msgs) StderrLine: {'line': b'    next_node = vsni(current)\n'}
+[19.945155] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 620, in visit_symbol_node_in\n'}
+[19.945231] (px4_msgs) StderrLine: {'line': b'    super(ForestToParseTree, self).visit_symbol_node_in(node)\n'}
+[19.945307] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 419, in visit_symbol_node_in\n'}
+[19.945383] (px4_msgs) StderrLine: {'line': b'    return node.children\n'}
+[19.945456] (px4_msgs) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/lark/parsers/earley_forest.py", line 89, in children\n'}
+[19.945550] (px4_msgs) StderrLine: {'line': b"    return sorted(self._children, key=attrgetter('sort_key'))\n"}
+[19.945663] (px4_msgs) StderrLine: {'line': b'KeyboardInterrupt\n'}
+[19.953071] (-) TimerEvent: {}
+[20.001544] (px4_msgs) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/px4_msgs__rosidl_generator_c.dir/build.make:272: rosidl_generator_c/px4_msgs/msg/action_request.h] Interrupt\n'}
+[20.001994] (px4_msgs) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:231: CMakeFiles/px4_msgs__rosidl_generator_c.dir/all] Interrupt\n'}
+[20.017502] (px4_msgs) StderrLine: {'line': b'gmake[2]: *** [px4_msgs__rs/CMakeFiles/px4_msgs__rs.dir/build.make:458: rosidl_generator_rs/px4_msgs/rust/src/lib.rs] Interrupt\n'}
+[20.018012] (px4_msgs) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:635: px4_msgs__rs/CMakeFiles/px4_msgs__rs.dir/all] Interrupt\n'}
+[20.050473] (px4_msgs) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/px4_msgs__cpp.dir/build.make:1193: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp] Interrupt\n'}
+[20.050972] (px4_msgs) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:284: CMakeFiles/px4_msgs__cpp.dir/all] Interrupt\n'}
+[20.051362] (px4_msgs) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[20.053153] (-) TimerEvent: {}
+[20.054983] (px4_msgs) CommandEnded: {'returncode': -2}
+[20.079148] (px4_msgs) JobEnded: {'identifier': 'px4_msgs', 'rc': 'SIGINT'}
+[20.089960] (-) EventReactorShutdown: {}
